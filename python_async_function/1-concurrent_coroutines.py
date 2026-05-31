@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""This module defines a coroutine that runs multiple wait_random calls concurrently."""
+"""This module defines a coroutine that runs wait_random concurrently."""
 
 import asyncio
 from typing import List

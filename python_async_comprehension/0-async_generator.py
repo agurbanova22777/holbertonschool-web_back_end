@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""This module defines an async generator that yields random numbers over time."""
+"""This module defines an async generator yielding random numbers over time."""
 
 import asyncio
 import random
@@ -7,7 +7,7 @@ from typing import Generator
 
 
 async def async_generator() -> Generator[float, None, None]:
-    """Yield 10 random numbers between 0 and 10, waiting 1 second between yields."""
+    """Yield 10 random numbers, waiting 1 second between each yield."""
     for _ in range(10):
         await asyncio.sleep(1)
         yield random.uniform(0, 10)

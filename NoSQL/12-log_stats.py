@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Log statistics script"""
+"""Log statistics script."""
 
 from pymongo import MongoClient
 
@@ -11,16 +11,18 @@ def log_stats():
     nginx_collection = client.logs.nginx
 
     total_logs = nginx_collection.count_documents({})
+
     print("{} logs".format(total_logs))
 
-    print("Methods: ")
+    print("Methods:")
 
     methods = ["GET", "POST", "PUT", "PATCH", "DELETE"]
+
     for method in methods:
-       count = nginx_collection.count_documents(
-          {"methods": method}
-       )
-       print("method {}: {}".format(method, count))
+        count = nginx_collection.count_documents(
+            {"method": method}
+        )
+        print("method {}: {}".format(method, count))
 
     status_count = nginx_collection.count_documents(
         {
@@ -29,7 +31,8 @@ def log_stats():
         }
     )
 
-    print("{}".format(status_count))
+    print("{} status check".format(status_count))
+
 
 if __name__ == "__main__":
     log_stats()

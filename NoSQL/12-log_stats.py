@@ -22,7 +22,7 @@ def log_stats():
         count = nginx_collection.count_documents(
             {"method": method}
         )
-        print("method {}: {}".format(method, count))
+        print("\tmethod {}: {}".format(method, count))
 
     status_count = nginx_collection.count_documents(
         {

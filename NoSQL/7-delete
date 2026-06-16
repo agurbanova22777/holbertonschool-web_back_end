@@ -1,6 +1,5 @@
 // deletes docs with specific name
 
-db.school.delete(
-    {name: "Holberton school"},
-    {multi: true}
+db.school.deleteMany(
+    {name: "Holberton school"}
 )

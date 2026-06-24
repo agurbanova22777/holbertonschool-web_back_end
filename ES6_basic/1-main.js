@@ -1,4 +1,4 @@
-import taskBlock from './1-block-scoped.js';
+import returnHowManyArguments from './4-rest-parameter.js';
 
-console.log(taskBlock(true));
-console.log(taskBlock(false));
+console.log(returnHowManyArguments("one"));
+console.log(returnHowManyArguments("one", "two", 3, "4th"));

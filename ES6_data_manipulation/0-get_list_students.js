@@ -15,7 +15,7 @@ function getListStudents() {
         {
             firstName: "Serena",
             id: 5,
-            location: "Francisco"
+            location: "San Francisco"
         }
     ];
 }

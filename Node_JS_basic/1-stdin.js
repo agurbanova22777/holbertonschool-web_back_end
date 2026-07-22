@@ -6,6 +6,9 @@ process.stdin.on('data', (data) => {
   process.stdout.write(`Your name is: ${data}`);
 });
 
-process.on('SIGINT', () => {
+const closeProgram = () => {
   process.stdout.write('This important software is now closing\n');
-});
+};
+
+process.stdin.on('end', closeProgram);
+process.on('SIGINT', closeProgram);

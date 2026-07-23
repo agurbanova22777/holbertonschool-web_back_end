@@ -4,12 +4,11 @@ function countStudents(path) {
   let data;
   try {
     data = fs.readFileSync(path, 'utf-8');
-  }
-  catch (err) {
+  } catch (err) {
     throw new Error('Cannot load the database');
   }
   const lines = data.split('\n');
-  const students = lines.filter(line => line !== '');
+  const students = lines.filter((line) => line !== '');
   const studentData = students.slice(1);
 
   console.log(`Number of students: ${studentData.length}`);
@@ -25,9 +24,11 @@ function countStudents(path) {
     fields[field].push(firstname);
   }
   for (const field in fields) {
-    console.log(
-      `Number of students in ${field}: ${fields[field].length}. List: ${fields[field].join(', ')}`
+    if (Object.prototype.hasOwnProperty.call(fields, field)) {
+      console.log(
+        `Number of students in ${field}: ${fields[field].length}. List: ${fields[field].join(', ')}`,
       );
+    }
   }
 }
 

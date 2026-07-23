@@ -1,11 +1,11 @@
-const fs = require('fs')
+const fs = require('fs');
 
-function countStudents(path){
+function countStudents(path) {
   let data;
-  try{
-    data = fs.readFileSync(path, 'utf8');
+  try {
+    data = fs.readFileSync(path, 'utf-8');
   }
-  catch{
+  catch (err) {
     throw new Error('Cannot load the database');
   }
   const lines = data.split('\n');
@@ -19,8 +19,8 @@ function countStudents(path){
     const info = student.split(',');
     const firstname = info[0];
     const field = info[3];
-    if(!fields[field]) {
-      fields[field] =[];
+    if (!fields[field]) {
+      fields[field] = [];
     }
     fields[field].push(firstname);
   }

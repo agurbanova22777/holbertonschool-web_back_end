@@ -1,7 +1,7 @@
 const http = require('http');
 
 const app = http.createServer((req, res) => {
-  res.writeHead(200, { 'Conrent-Type': 'text/plain'});
+  res.writeHead(200, { 'Conrent-Type': 'text/plain' });
   res.end('Hello Holberton School!');
 });
 
